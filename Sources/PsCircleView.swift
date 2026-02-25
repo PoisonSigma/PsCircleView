@@ -1,16 +1,16 @@
 //
-//  TdwCircleView.swift
-//  TdwCircleViewDemo
+//  PsCircleView.swift
+//  PsCircleViewDemo
 //
-//  Created by 谭迪文 on 2021/5/21.
+//  Created by Poison on 2021/5/21.
 //
 
 import UIKit
 
-public class TdwCircleView: UIView,UICollectionViewDataSource, UICollectionViewDelegate{
+public class PsCircleView: UIView,UICollectionViewDataSource, UICollectionViewDelegate{
     public typealias Block = (Int)->()
     @objc public var block:Block?
-    let ID = "TdwCircleViewCell"
+    let ID = "PsCircleViewCell"
     var timer = Timer()
     var mainView:UICollectionView!
     @objc public var pageControl = UIPageControl()
@@ -58,7 +58,7 @@ public class TdwCircleView: UIView,UICollectionViewDataSource, UICollectionViewD
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ID, for: indexPath) as! TdwCircleViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ID, for: indexPath) as! PsCircleViewCell
         let itemIndex = indexPath.row % views.count
         if titles.count >= itemIndex && titles.count > 0{
             cell.title = titles[itemIndex]
@@ -104,7 +104,7 @@ public class TdwCircleView: UIView,UICollectionViewDataSource, UICollectionViewD
         mainView.isPagingEnabled = true
         mainView.showsHorizontalScrollIndicator = false
         mainView.showsVerticalScrollIndicator = false
-        mainView.register(TdwCircleViewCell.self, forCellWithReuseIdentifier: ID)
+        mainView.register(PsCircleViewCell.self, forCellWithReuseIdentifier: ID)
         
         mainView.dataSource = self
         mainView.delegate = self
@@ -238,7 +238,7 @@ public class TdwCircleView: UIView,UICollectionViewDataSource, UICollectionViewD
     
 }
 
-extension TdwCircleView:UICollectionViewDelegateFlowLayout{
+extension PsCircleView:UICollectionViewDelegateFlowLayout{
     //cell尺寸,如果图片自己有尺寸就不显示这个尺寸
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: bounds.width , height: bounds.height )

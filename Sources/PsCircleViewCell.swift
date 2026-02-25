@@ -1,13 +1,13 @@
 //
-//  TdwCircleViewCell.swift
-//  TdwCircleViewDemo
+//  PsCircleViewCell.swift
+//  PsCircleViewDemo
 //
-//  Created by 谭迪文 on 2021/5/25.
+//  Created by Poison on 2021/5/25.
 //
 
 import UIKit
 //import SnapKit
-class TdwCircleViewCell: UICollectionViewCell {
+class PsCircleViewCell: UICollectionViewCell {
     var view = UIView(){
         didSet{
             setUI()
